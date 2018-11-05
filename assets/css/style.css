@@ -1,8 +1,60 @@
-
 /* Victoria's part navbar */
+.adressbar{
+  background-color: black;
+  margin-bottom: 0px;
+}
+marquee{
+  color: white;
+}
+.backnav {
+  background-color: #a3211f;
+}
+.backnav img{
+  height: 55px;
+  width: 55px;
+  border-radius: 10px;
+  margin-left: 0px;
+}
+.nav-item {
+  padding-left:10px;
+  padding-right:10px;
+  font-family: 'Lato', sans-serif;
+}
+.nav-link{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+#linkfacebook {
+  position: absolute;
+  right: 20px;
+}
+#linkLinkedin {
+  position: absolute;
+  right: 50px;
+}
 
 /* carousel */
 
+  #carousel1 p{
+  color: black;
+  font-family: 'Lobster Two', cursive, sans-serif;
+  font-size: 40px;
+  text-shadow: 3px 3px 6px white;
+}
+#carousel1 span{
+  font-weight: bolder;
+  color: green;
+}
+#carousel1 h5{
+  color: black;
+  font-family: 'Oswald', Arial, sans-serif;
+  font-size: 50px;
+  text-decoration: underline;
+}
+.SAVOIR h5{
+  color: black;
+}
 
 /* End Victoria's part */
 
