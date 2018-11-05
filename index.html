@@ -4,18 +4,17 @@
   <!-- Required meta tags -->
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-
   <title>Pizza Mia - Accueil</title>
   <!-- Shortcut Icon -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,600,800,900" rel="stylesheet" type="text/css" />
-  <link rel="icon" type="image/ico" href="./assets/img/cloud-2.png" />
-  <!--Import materialize.css-->
 
   <!-- Import personnal stylesheet -->
   <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
-
 </head>
 <body>
   <!-- bandeau enseigne -->
@@ -27,37 +26,165 @@
 
   </header>
 
-<!-- carousel -->
+  <!-- carousel -->
 
   <section>
 
   </section>
-<!-- end of Victoria's part -->
+  <!-- end of Victoria's part -->
 
 
   <!-- End Victoria's part -->
 
 
-<!-- atouts fraicheurs -->
+  <!-- atouts fraicheurs -->
 
-<!-- end of atouts fraicheurs -->
+  <!-- end of atouts fraicheurs -->
 
- <!-- Card's part offres-->
+  <!-- Card's part offres-->
 
 
 
-    <!-- Card's part -->
+  <!-- Card's part -->
+  <!-- Manuel's part -->
 
+  <section class="container-fluid recepees text-center">
+    <div class="row">
+      <div class="col-lg-12" "col-sm-6">
+        <div class="recepees-title">
+          <div class="title">
+            <h1><strong>Idees recettes du jour</strong></h1>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="cards">
+      <div class="row">
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/pizzaraclette.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>La pizza du jour</strong></h5>
+              <p class="card-text">La pizza aux ingrédients d'automne ravira les papillotes de toute la famille</p>
+              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Consulter la recette</button>
+            </div>
+            <!-- Modal 1-->
+            <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Pate</li>
+                      <li>Champignons</li>
+                      <li>Chataignes</li>
+                      <li>Poivrons Jaunes</li>
+                      <li>Tomates</li>
+                      <li>Pignons</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/cocktail.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Le cocktail du jour</strong></h5>
+              <p class="card-text">L'incontournable cocktail italien revient pour accompagner vos repas</p>
+              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal2">Consulter la recette</button>
+            </div>
+            <!-- Modal 2-->
+            <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Pate</li>
+                      <li>Champignons</li>
+                      <li>Chataignes</li>
+                      <li>Poivrons Jaunes</li>
+                      <li>Tomotes</li>
+                      <li>Pignons</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card" style="width: 18rem;">
+            <img class="card-img-top" src="assets/images/tiramisu.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title"><strong>Le Dessert du jour</strong></h5>
+              <p class="card-text">Le tiramisu revisité et allégé pour l'occasion pour ne plus avoir de regrets inutiles</p>
+              <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal3">Consulter la recette</button>
+            </div>
+            <!-- Modal 3-->
+            <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                  </div>
+                  <div class="modal-body">
+                    <ul>
+                      <li>Pate</li>
+                      <li>Champignons</li>
+                      <li>Chataignes</li>
+                      <li>Poivrons Jaunes</li>
+                      <li>Tomotes</li>
+                      <li>Pignons</li>
+                    </ul>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Modal -->
+
+
+
+
+  <!-- end of Manuel's part -->
   <!-- footer part's -->
-    <footer>
+  <footer>
 
-    </footer>
-    <!-- End of footer's part -->
+  </footer>
+  <!-- End of footer's part -->
 
-    <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
-    <script src="assets/import/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="assets/import/CreditCardValidator/creditcard.js"></script>
-    <script src="assets/import/SweetAlert/sweetalert.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+  <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
+
+  <script src="assets/js/script.js"></script>
+</body>
 </html>
