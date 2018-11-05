@@ -7,7 +7,39 @@
 /* End Victoria's part */
 
 /* Jeffren's part  */
- /* offres et cards */
+/* offres et cards */
+#deleteProduct{
+  color: red;
+  text-align: center;
+  border: none;
+  font-size: 16px;
+  background-color: white;
+  height:20px;
+}
+#deleteProduct, #cartButton:hover{
+  cursor:pointer;
+}
+
+#cartButton{
+  color : red;
+  font-size: 3rem;
+  position: fixed;
+  padding: 0.8rem;
+  bottom: 11px;
+  right: 11px;
+  z-index: 300;
+  border : solid;
+  background-color: yellow;
+  border-radius: 40px ;
+}
+
+#cartButton:hover{
+  color: yellow;
+  border : solid;
+  padding: 0.8rem;
+  background-color: red;
+  border-radius: 40px ;
+}
 /* End Jeffen's part */
 
 /* Manuel's part  */

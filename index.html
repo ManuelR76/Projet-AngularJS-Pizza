@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" ng-app="store">
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8" />
@@ -7,7 +7,9 @@
 
   <title>Pizza Mia - Accueil</title>
   <!-- Shortcut Icon -->
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- <link href="bootstrap.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,600,800,900" rel="stylesheet" type="text/css" />
   <link rel="icon" type="image/ico" href="./assets/img/cloud-2.png" />
@@ -27,37 +29,112 @@
 
   </header>
 
-<!-- carousel -->
+  <!-- carousel -->
 
   <section>
 
   </section>
-<!-- end of Victoria's part -->
+  <!-- end of Victoria's part -->
 
 
   <!-- End Victoria's part -->
 
 
-<!-- atouts fraicheurs -->
+  <!-- atouts fraicheurs -->
 
-<!-- end of atouts fraicheurs -->
+  <!-- end of atouts fraicheurs -->
 
- <!-- Card's part offres-->
-
-
-
+  <!-- Card's part offres-->
+  <div class="container">
+    <div ng-controller="storeController">
+      <h1>Nos offres</h1>
+      <ul class="list-group text-center">
+        <li class="col-xs-6 col-md-3 col-sm-3 col-lg-3 list-group-item" ng-repeat="product in products">
+          <div class="card">
+            <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+            <div class="card-body">
+              <h2 class="card-title">{{product.name}}</h2>
+              <p class="card-text">{{product.description}}</p>
+              <h3>{{product.price | currency:"€"}}</h3>
+              <input class="btn btn-success" type="button" ng-click="addItemToCart(product)" value="Commander" />
+            </div>
+          </div>
+        </li>
+      </ul>
+      <!-- Button to Open the Modal -->
+      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#cart">Open modal</button>
+      <!-- The Modal -->
+      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="cartContent">Votre commande</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <!-- MODAL BODY -->
+            <div class="modal-body">
+              <main class="page">
+                <section class="shopping-cart dark">
+                  <div class="container">
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-8 scrollYClass">
+                          <div class="items">
+                            <h3 ng-hide="cart.length !== 0">Votre panier est vide.</h3>
+                            <ul class="list-group">
+                              <li class="list-group-item" ng-repeat="c in cart">
+                                <h6>{{c.name}} - <span style="color:blue"> {{c.count}} </span> + {{c.price*c.count | currency:"€"}}<button type="button" class="btnDelete button tooltip-test" id="deleteProduct" title="Supprimer" ng-click="removeItemCart(c)">X</button></h6>
+                              </li>
+                            </ul>
+                          </div>
+                        </div>
+                        <div class="col-md-12 col-lg-4">
+                          <div class="summary">
+                            <h3>Résumé</h3>
+                            <div class="summary-item"><span class="text">Total : {{total | currency:"€"}}</span></div>
+                            <div class="shipping">Pas de frais de port.</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </main>
+            </div>
+            <!-- !MODAL BODY -->
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+              <button type="button" class="btn btn-primary">Valider</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </body>
+    <!-- PANIER -->
+    <div class="container-fluid">
+      <div class="row">
+        <i data-toggle="modal" data-target="#cart" class="fas fa-shopping-cart" id="cartButton"></i>
+      </div>
+    </div>
     <!-- Card's part -->
 
-  <!-- footer part's -->
+    <!-- footer part's -->
     <footer>
 
     </footer>
     <!-- End of footer's part -->
 
     <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
-    <script src="assets/import/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="assets/import/CreditCardValidator/creditcard.js"></script>
-    <script src="assets/import/SweetAlert/sweetalert.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-cookies.js"></script>
+    <!-- <script src="angular.min.js"></script>
+    <script src="angular-cookies.min.js"></script>
+    <link href="bootstrap.min.js"> -->
     <script src="assets/js/script.js"></script>
   </body>
-</html>
+  </html>
