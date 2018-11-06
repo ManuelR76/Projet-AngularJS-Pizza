@@ -10,12 +10,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,300,600,800,900" rel="stylesheet" type="text/css" />
-  <!-- font footer -->
-  <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
-  <!--Import materialize.css-->
+<!-- font awesome -->
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 
+  <!-- font footer -->
+ <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
   <!-- Import personnal stylesheet -->
   <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
 </head>
@@ -46,65 +45,57 @@
 
  <!-- Card's part offres-->
 
-
-
     <!-- Card's part -->
 
   <!-- footer part's -->
-  <div>
 
-  </div><br><br>
     <footer id="footer">
       <div class="container-fluid">
           <div class="row footer-top">
-              <div class="col-lg-4 col-xs-12 cssform1">
+              <div class="col cssform1">
                 <form id="formContact" name="formContact">
-<fieldset>
-  <legend id="titleform">NOUS CONTACTER</legend> <!--le nom donné au formulaire-->
-  <div>
-    <label id="labelform" for="name">Nom : </label><input type="text" name="name" id="inputform" ng-model="name" ng-pattern="/^[a-zA-ZÂ-ÿ- ']+$/" required />
-    <div ng-messages="formContact.name.$error" ng-if="formContact.name.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
-      <p class="hasError" ng-message="required"></p> <!--ce message est affiché uniquement si le champ n'a pas été rempli (car on a utilisé required comme attribut dans l'input, il est donc obligatoire)-->
-      <p class="hasError" ng-message="pattern"></p> <!-- ce message est affiché uniquement si le champ ne correspond pas au pattern qui a été défini dans "ng-pattern" de l'input-->
-    </div>
-  </div>
-  <div>
-    <label id="labelform" for="email">E-mail : </label><input type="text" name="email" id="inputform" ng-model="email" ng-pattern="/^[a-z0-9.-_]+@[a-z0-9.-]+\.([a-z]){2,6}$/"  required />
-    <div ng-messages="formContact.email.$error" ng-if="formContact.email.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
-      <p class="hasError" ng-message="required"></p> <!--ce message est affiché uniquement si le champ n'a pas été rempli (car on a utilisé required comme attribut dans l'input, il est donc obligatoire)-->
-      <p class="hasError" ng-message="pattern"></p> <!-- ce message est affiché uniquement si le champ ne correspond pas au pattern qui a été défini dans "ng-pattern" de l'input-->
-    </div>
-  </div>
-  <div>
-    <label id="labelform" for="subject">Sujet : </label><input type="text" name="subject" id="inputform" ng-model="subject" required />
-    <div ng-messages="formContact.subject.$error" ng-if="formContact.subject.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
-      <p class="hasError" ng-message="required"></p>
-    </div>
-  </div>
-  <div>
-    <label id="labelform" for="textsubject">Texte : <textarea name="textsubject" id="textarea1" ng-model="textsubject" required ></textarea></label>
-    <div ng-messages="formContact.textsubject.$error" ng-if="formContact.textsubject.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
-      <p class="hasError" ng-message="required"></p>
-    </div>
-  </div>
-  <input id="footerbutton" type="submit" name="sendForm" ng-click="clickedButton()" ng-disabled="formContact.$invalid"/> <!--désactive le bouton lorsque le formulaire est invalide (invalid renvoie true si ce n'est pas valide, donc ng-disabled est activé)-->
-</fieldset> <!-- le "ng-click" du boutton au dessus permet de lancer la fonction "clickedButton()" (si c'est une fonction qu'on veut lancer, ne pas oublier les parenthèes à la fin pour bien indiquer que s'en est une)-->
-</form>
-<div>
+                 <fieldset>
+                  <legend id="titleform">NOUS CONTACTER</legend> <!--le nom donné au formulaire-->
+                    <div>
+                      <label id="labelform" for="name">Nom : </label><input type="text" name="name" id="inputform" ng-model="name" ng-pattern="/^[a-zA-ZÂ-ÿ- ']+$/" required />
+                      <div ng-messages="formContact.name.$error" ng-if="formContact.name.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
+                        <p class="hasError" ng-message="required"></p> <!--ce message est affiché uniquement si le champ n'a pas été rempli (car on a utilisé required comme attribut dans l'input, il est donc obligatoire)-->
+                        <p class="hasError" ng-message="pattern"></p> <!-- ce message est affiché uniquement si le champ ne correspond pas au pattern qui a été défini dans "ng-pattern" de l'input-->
+                      </div>
+                    </div>
+                    <div>
+                    <label id="labelform" for="email">E-mail : </label><input type="text" name="email" id="inputform" ng-model="email" ng-pattern="/^[a-z0-9.-_]+@[a-z0-9.-]+\.([a-z]){2,6}$/"  required />
+                    <div ng-messages="formContact.email.$error" ng-if="formContact.email.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
+                      <p class="hasError" ng-message="required"></p> <!--ce message est affiché uniquement si le champ n'a pas été rempli (car on a utilisé required comme attribut dans l'input, il est donc obligatoire)-->
+                      <p class="hasError" ng-message="pattern"></p> <!-- ce message est affiché uniquement si le champ ne correspond pas au pattern qui a été défini dans "ng-pattern" de l'input-->
+                    </div>
+                    </div>
+                    <div>
+                    <label id="labelform" for="subject">Sujet : </label><input type="text" name="subject" id="inputform" ng-model="subject" required />
+                    <div ng-messages="formContact.subject.$error" ng-if="formContact.subject.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
+                      <p class="hasError" ng-message="required"></p>
+                    </div>
+                    </div>
+                    <div>
+                    <label id="labelform" for="textsubject">Texte :<textarea class="form-group" name="textsubject" class="" id="textarea1" ng-model="textsubject" required ></textarea></label>
+                    <div ng-messages="formContact.textsubject.$error" ng-if="formContact.textsubject.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
+                      <p class="hasError" ng-message="required"></p>
+                    </div>
+                    </div>
+                    <input id="footerbutton" type="submit" name="sendForm" ng-click="clickedButton()" ng-disabled="formContact.$invalid"/> <!--désactive le bouton lorsque le formulaire est invalide (invalid renvoie true si ce n'est pas valide, donc ng-disabled est activé)-->
+                  </fieldset> <!-- le "ng-click" du boutton au dessus permet de lancer la fonction "clickedButton()" (si c'est une fonction qu'on veut lancer, ne pas oublier les parenthèes à la fin pour bien indiquer que s'en est une)-->
+                </form>
+            </div>
 
-                                <!--le $index correspond à l'index de la ligne information dans le tableau formsArray-->
-</div></div>
-
-              <div class="col-lg-4 col-xs-12 text-center border-left">
+              <div class="col text-center">
                     <h4 class="ft-text-title">NOTRE RESTAURANT</h4>
-                    <img id="imgmap" src = assets/imgmap.png />
+                    <img id="imgmap" src = assets/images/imgmap.png />
                     <div>
                     <p class="member"> 75 rue d'ingouville, 76600 Le Havre</p>
                     </div>
-                </div>
+             </div>
 
-
-              <div class="col-lg-4 col-xs-12 text-center border-left">
+              <div class="col text-center">
                   <div class="address-member">
                     <h4 class="ft-text-title2">NOS HORAIRES</h4>
                       <p class="member">
@@ -116,15 +107,32 @@
                         Jeudi : 11:00 - 14:00 / 18:00 - 23:00 <br>
                         Vendredi : 11:00 - 14:00 / 18:00 - 23:00 <br>
                         Samedi : 11:00 - 14:00 / 18:00 - 23:00 <br>
-                 </div>
-                 </div>
-
-
-
-      	</div>
+                  </div>
+              </div>
+       	</div>
       </div>
-
-    </footer>
+   </footer>
+   <div class="container-fluid footerbottom">
+      <div class=" row pull-right">
+         <nav class="navbar">
+             <nav class="nav navbar-nav pull-xs-left">
+                 <img id="logofooter" src="assets/images/logo.png" />
+                 <a class="nav-item nav-link" href="#"></a>
+                 <a class="nav-item nav-link" href="#"></a>
+                 <a class="nav-item nav-link" href="#"></a>
+             </nav>
+         </nav>
+     </div>
+    <div id="socialfooter">
+      <a href="#"><i class="fa fa-facebook-official fa-2x logosocial"></i></a>
+      <a href="#"><i class="fa fa-twitter fa-2x logosocial"></i></a>
+      <a href="#"><i class="fa fa-linkedin fa-2x logosocial"></i></a><br>
+      <p class="h6">
+         Powered by Mia-Pizza-76.com
+      <a href="" target="_blank"></a>
+     </p>
+    </div>
+   </div>
     <!-- End of footer's part -->
 
     <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
