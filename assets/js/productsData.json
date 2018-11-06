@@ -1,34 +1,178 @@
 [
   {
     "id":1,
-    "name":"Pizza congelée",
+    "name":"Pizza provençale",
     "price":12.50,
-    "image":"./assets/images/shitty.jpeg",
-    "category":"pizza",
-    "description":"bonne"
+    "image":"./assets/images/provencale.jpg",
+    "category":"Pizza",
+    "description":"anchois, poivrons, oignons, ail"
   },
   {
     "id":2,
     "name":"Pizza reblochon",
     "price":14.50,
-    "image":"./assets/images/shitty.jpeg",
-    "category":"pizza",
-    "description":"bonne"
+    "image":"./assets/images/reblochon.jpeg",
+    "category":"Pizza",
+    "description":"chèvre, lardons, champignons"
   },
   {
     "id":3,
     "name":"Pizza norvégienne",
     "price":15.50,
-    "image":"./assets/images/shitty.jpeg",
-    "category":"pizza",
-    "description":"bonne"
+    "image":"./assets/images/norvégienne.jpeg",
+    "category":"Pizza",
+    "description":"fromage à raclette, lardons, pommes de terre"
   },
   {
     "id":4,
     "name":"Pizza poulet teryaki",
     "price":12.60,
-    "image":"./assets/images/shitty.jpeg",
-    "category":"pizza",
-    "description":"bonne"
+    "image":"./assets/images/poulet.jpeg",
+    "category":"Pizza",
+    "description":"poulet épicé, pomme de terre, poivrons, fromage"
+  },
+  {
+    "id":5,
+    "name":"Mia Pizza",
+    "price":10.60,
+    "image":"./assets/images/pizzamia.jpeg",
+    "category":"Pizza",
+    "description":"lardons, mozzarella, oignons, champignons, chorizo, chèvre, oeuf"
+  },
+  {
+    "id":6,
+    "name":"Pizza royale",
+    "price":14.20,
+    "image":"./assets/images/royal.jpeg",
+    "category":"Pizza",
+    "description":"viande hachée, oignons, poivrons, épices, jambon, mozzarella"
+  },
+  {
+    "id":7,
+    "name":"Américain",
+    "price":5.50,
+    "image":"./assets/images/americain.jpeg",
+    "category":"Sandwich",
+    "description":"viande hachée, frite, sauce au choix"
+  },
+  {
+    "id":8,
+    "name":"Kebab",
+    "price":14.20,
+    "image":"./assets/images/kebab.jpeg",
+    "category":"Sandwich",
+    "description":"viande hachée, oignons, poivrons, épices, jambon, mozzarella"
+  },
+  {
+    "id":9,
+    "name":"Kebab complet",
+    "price":6.20,
+    "image":"./assets/images/kebab.jpeg",
+    "category":"Sandwich",
+    "description":"2 sauces aux choix, viandes au choix et 1 frites"
+  },
+  {
+    "id":10,
+    "name":"Kebab crudités",
+    "price":6.20,
+    "image":"./assets/images/kebab.jpeg",
+    "category":"Sandwich",
+    "description":"2 sauces aux choix et 3 légumes au choix"
+  },
+  {
+    "id":11,
+    "name":"Salade fermière",
+    "price":7.20,
+    "image":"./assets/images/salade-orientale-4536.jpg",
+    "category":"Salade",
+    "description":"mesclun, tomates, poulet, maïs + sauce salade"
+  },
+  {
+    "id":12,
+    "name":"Salade chèvre chaud",
+    "price":12.00,
+    "image":"./assets/images/i83262-crudites-chevre.jpg",
+    "category":"Salade",
+    "description":"mesclun, tomates, chèvre chaud, lardons, croûtons de pain + sauce salade"
+  },
+  {
+    "id":13,
+    "name":"Salade avocat crevette",
+    "price":13.20,
+    "image":"./assets/images/i136728-salade-avocats-crevettes-et-tomates.jpeg",
+    "category":"Salade",
+    "description":"mesclun, tomates, avocat, crevettes, citron + sauce salade"
+  },
+  {
+    "id":14,
+    "name":"Salade du Chef",
+    "price":9.00,
+    "image":"./assets/images/193932_640x428.jpg",
+    "category":"Salade",
+    "description":"mesclun, tomates, poulet, maïs, oeuf, olives + sauce teriyaki"
+  },
+  {
+    "id":15,
+    "name":"Tacos viande hachée",
+    "price":9.00,
+    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "category":"Tacos",
+    "description":"viande hachée, frites à l'intérieur, sauce fromagère"
+  },
+  {
+    "id":16,
+    "name":"Tacos merguez",
+    "price":7.00,
+    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "category":"Tacos",
+    "description":"merguez, frites à l'intérieur, sauce fromagère"
+  },
+  {
+    "id":17,
+    "name":"Tacos poulet",
+    "price":7.00,
+    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "category":"Tacos",
+    "description":"poulet, frites à l'intérieur, sauce fromagère "
+  },
+  {
+    "id":18,
+    "name":"Tacos cordon bleu",
+    "price":7.00,
+    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "category":"Tacos",
+    "description":"poulet, frites à l'intérieur, sauce fromagère "
+  },
+  {
+    "id":19,
+    "name":"Coca-Cola 33cl",
+    "price":2.00,
+    "image":"./assets/images/images.jpeg",
+    "category":"Boisson",
+    "description":"canette de 33cl "
+  },
+  {
+    "id":20,
+    "name":"Fanta 33cl",
+    "price":2.00,
+    "image":"./assets/images/24-canettes-de-fanta-orange-33-cl.jpg",
+    "category":"Boisson",
+    "description":"cannette de 33 cl"
+  },
+  {
+    "id":21,
+    "name":"Oasis 33cl",
+    "price":2.00,
+    "image":"./assets/images/700902.jpg",
+    "category":"Boisson",
+    "description":"cannette de 33 cl"
+  },
+  {
+    "id":22,
+    "name":"Perrier 33cl",
+    "price":2.00,
+    "image":"./assets/images/16919.jpg",
+    "category":"Boisson",
+    "description":"eau gazeuse de 33 cl"
   }
 ]

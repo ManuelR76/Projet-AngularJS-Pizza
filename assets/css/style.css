@@ -8,6 +8,21 @@
 
 /* Jeffren's part  */
 /* offres et cards */
+.minusItem{
+  color:red;
+}
+.minusItem:hover{
+  cursor:pointer;
+}
+.plusItem{
+  color:green;
+}
+.plusItem:hover{
+  cursor:pointer;
+}
+#priceByItem{
+  color : blue;
+}
 #deleteProduct{
   color: red;
   text-align: center;
@@ -19,26 +34,43 @@
 #deleteProduct, #cartButton:hover{
   cursor:pointer;
 }
-
 #cartButton{
-  color : red;
+  color : green;
   font-size: 3rem;
   position: fixed;
   padding: 0.8rem;
+  height: 5rem;
+  width: 5rem;
   bottom: 11px;
   right: 11px;
   z-index: 300;
-  border : solid;
-  background-color: yellow;
-  border-radius: 40px ;
+  background-color: lightGrey;
+  border-radius: 3rem ;
+  box-shadow: -1px 2px 5px 1px rgba(0, 0, 0, 0.7),
+            -1px 2px 20px rgba(255, 255, 255, 0.6) inset;
 }
-
 #cartButton:hover{
-  color: yellow;
-  border : solid;
+  color: blue;
   padding: 0.8rem;
-  background-color: red;
-  border-radius: 40px ;
+  background-color: grey;
+}
+.circle{
+  position: absolute;
+  font-size: 1rem;
+  margin-left: 1.2rem;
+  margin-top: 1.05rem;
+  margin-bottom: 0.25rem;
+  width:25px;
+  font-weight: bold;
+  background-color:white;
+  height:23px;
+  vertical-align: middle;
+  text-align:center;
+  border-radius:3rem;
+  z-index: 2;
+}
+@media (min-width: 768px) {
+
 }
 /* End Jeffen's part */
 
