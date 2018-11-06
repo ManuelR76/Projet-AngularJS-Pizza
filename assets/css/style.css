@@ -51,9 +51,10 @@
 }
 
 #textarea1{
-width: 20rem;
-margin-left: 4rem;
-border: 2px solid #a3211f;
+  width: 20rem;
+  height: 6rem;
+  border: 2px solid #a3211f;
+  max-width: 100%;
 }
 #footerbutton{
   float: inline-end;

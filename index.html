@@ -77,7 +77,7 @@
                     </div>
                     </div>
                     <div>
-                    <label id="labelform" for="textsubject">Texte :<textarea class="form-group" name="textsubject" class="" id="textarea1" ng-model="textsubject" required ></textarea></label>
+                    <label id="labelform" for="textsubject">Texte :</label><input type="text" name="textsubject" id="textarea1" ng-model="textsubject" required ></textarea>
                     <div ng-messages="formContact.textsubject.$error" ng-if="formContact.textsubject.$touched"> <!--on affiche les messages uniquement si il y a une erreur (ng-messages), et seulement une fois que l'input a été modifié (ng-if)-->
                       <p class="hasError" ng-message="required"></p>
                     </div>
