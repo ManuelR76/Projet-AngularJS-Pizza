@@ -16,7 +16,7 @@ marquee{
   margin-left: 0px;
 }
 .nav-item {
-  padding-left:10px;
+  padding-left:60px;
   padding-right:10px;
   font-family: 'Lato', sans-serif;
 }
@@ -24,7 +24,6 @@ marquee{
   font-size: 15px;
   font-weight: bold;
 }
-
 #linkfacebook {
   position: absolute;
   right: 20px;
@@ -36,7 +35,7 @@ marquee{
 
 /* carousel */
 
-  #carousel1 p{
+#carousel1 p{
   color: black;
   font-family: 'Lobster Two', cursive, sans-serif;
   font-size: 40px;
@@ -59,7 +58,7 @@ marquee{
 /* End Victoria's part */
 
 /* Jeffren's part  */
- /* offres et cards */
+/* offres et cards */
 /* End Jeffen's part */
 
 /* Manuel's part  */
