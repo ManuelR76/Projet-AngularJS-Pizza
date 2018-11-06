@@ -44,7 +44,10 @@ h1 {
 	text-shadow: 2px 2px 2px black;
 	font-size: 36px;
 }
-h1 strong {
+h3 {
+	margin-top: 40px;
+}
+h3 strong {
 	background: #a3211f;
 	padding: 5px 10px;
 	box-shadow: 3px 3px 3px black;
