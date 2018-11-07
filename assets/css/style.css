@@ -1,30 +1,120 @@
 body {
-	max-width: auto;
-	display: flex;
-	height: auto;
-	background: url('../images/rome.jpg');
-	background-repeat: no-repeat;
-	position: relative;
-	z-index: 0;
-	padding-bottom: 100px;
-	background-size: cover;
+  margin: 0;
 }
-
-h1,
-h6 {
-	font-family: 'Open Sans';
-	font-weight: 300;
-	text-align: center;
-	position: absolute;
-	top: 45%;
-	right: 0;
-	left: 0;
-}
-
 
 /* Victoria's part navbar */
 
-/* carousel */
+marquee {
+  font-size: 0.8rem;
+  color: white;
+  background: black;
+  z-index: 2;
+  height: auto;
+  position: fixed;
+}
+
+.navbar {
+ background: linear-gradient( #a3211f, #BD0202);
+ position: fixed;
+ z-index: 1;
+ height: auto;
+ left: 0;
+ top: 0;
+ width: 100%;
+ /* transition top 0.3s; */
+ /* opacity: 1; */
+}
+
+.navbar.navbar-expand-lg.navbar-dark.backnav {
+  margin-top: 17px;
+  border-bottom: 2px solid black;
+  box-shadow: 4px 4px 10px black;
+}
+
+.navbar-brand #logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  margin: 0 140px 0 40px;
+  box-shadow: 3px 3px 3px black;
+}
+
+a.nav-link {
+  text-shadow: 1px 1px 1px black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+a.nav-link:hover {
+  border-bottom: 3px solid green;
+  font-size: 1rem;
+}
+
+a.nav-link.icon {
+  border-bottom: none;
+  text-shadow: 1px 1px 1px black;
+}
+
+.navbar li {
+  margin: auto 30px;
+}
+
+.navbar .icon1 {
+  margin-left: 220px;
+}
+
+.dropdown-menu.show {
+  background: linear-gradient( #a3211f, #BD0202);
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+/* .show {
+  opacity:0;
+} */
+/*
+
+
+/* Victoria main-page */
+
+.main-image {
+  margin-top: 0px;
+  background: url('../images/menu.jpg') top;
+  max-width: 100%;
+  display: flex;
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 100px;
+  border-bottom: 4px solid #FF8D12;
+  background-size: cover;
+}
+
+.main-image .slogan h1 {
+  font-size: 2.4em;
+  color: #c7cfdb;
+  margin-top: 370px;
+  margin-left: 160px;
+  text-shadow: 3px 3px 3px black;
+}
+
+.main-image .table {
+  margin-top: 370px;
+  margin-left: 0px;
+}
+
+.main-image .table h2 {
+  margin-left: 100px;
+  font-size: 2em;
+  color: #cca043;
+  font-family: 'Mali', cursive;
+}
+
+
 
 
 /* End Victoria's part */
@@ -34,31 +124,53 @@ h6 {
 /* End Jeffen's part */
 
 /* Manuel's part  */
-.cards {
-  margin-top: 160px;
+.recepees {
+	max-width: auto;
+	display: flex;
+	height: auto;
+	background: url('../images/rome.jpg');
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 0;
+  padding-top: 60px;
+	padding-bottom: 100px;
+	background-size: cover;
+  margin-top: 0px;
+  border-bottom: 4px solid #FF8D12;
 }
 
-h1 {
-	margin-top: 40px;
+.center-block {
+
+}
+
+.cards {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+}
+
+.card h3 {
+	margin-top: 0px;
 	color: #fff;
 	text-shadow: 2px 2px 2px black;
-	font-size: 36px;
-}
-h3 {
-	margin-top: 40px;
-}
-h3 strong {
-	background: #a3211f;
-	padding: 5px 10px;
-	box-shadow: 3px 3px 3px black;
-	border-radius: 5px;
 }
 
-h5 {
+h3 strong {
+  font-size: 0.8em;
+  font-family: 'Mali', cursive;
+  text-shadow: 2px 2px 2px black;
+  color: #fff;
+	background:  linear-gradient( #a3211f, #BD0202);
+	padding: 10px 15px;
+	box-shadow: 3px 3px 3px black;
+	border-radius: 5px;
+  margin-bottom: 100px;
+}
+
+.card h4 {
 	color: black;
 }
 
-h5#exampleModalLabel{
+.card h4#exampleModalLabel{
 	color: #fff;
 }
 
@@ -67,15 +179,9 @@ h5#exampleModalLabel{
  }
 
 .card {
-  margin: 0 auto;
-  float: none;
   margin-bottom: 10px;
   border: 1px solid black;
 	box-shadow: 3px 3px 3px black;
-}
-
-.card-text {
-	/* margin-bottom: 40px; */
 }
 
 .card-img-top{
@@ -83,9 +189,14 @@ h5#exampleModalLabel{
 	border-bottom: 1px solid black;
 }
 
+.card p{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
 .btn {
 	color: #fff;
-	background: #a3211f;
+	background: linear-gradient( #a3211f, #BD0202);
 	box-shadow: 3px 3px 3px black;
 }
 
@@ -99,13 +210,22 @@ h5#exampleModalLabel{
 }
 
 .modal-header {
-	background: #a3211f;
+	background: linear-gradient( #a3211f, #BD0202);
 	border: 1px solid black;
 }
 
 .modal-footer {
-	background: #a3211f;
+	background: linear-gradient( #a3211f, #BD0202);
 	border: 2px solid black;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+button.close {
+  color: #fff;
+
 }
 
 /* End Manuel's part  */
@@ -116,3 +236,61 @@ h5#exampleModalLabel{
 
 
 /* Yas End footer's part  */
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+
+  .navbar-brand #logo {
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    margin: 0 120px 0 40px;
+  }
+
+  .navbar li {
+    margin: auto 40px;
+  }
+
+  .navbar .icon1  {
+    margin-left: 40px;
+  }
+  .navbar .icon2  {
+    margin-left: 40px;
+  }
+  .main-image {
+    margin-top: 0px;
+    background: url('../images/menu.jpg') top;
+    max-width: 100%;
+    display: flex;
+    height: 100vh;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+    padding-bottom: 100px;
+    border-bottom: 4px solid #FF8D12;
+    background-size: cover;
+  }
+
+  .main-image .slogan h1 {
+    font-size: 1.3em;
+    color: #c7cfdb;
+    margin-top: 220px;
+    margin-left: 30px;
+    text-shadow: 2px 2px black;
+  }
+
+  .main-image .table {
+    margin-top: 200px;
+    margin-left: 0px;
+  }
+
+  .main-image .table h2 {
+    margin-left: 30px;
+    font-size: 1rem;
+    color: #cca043;
+    font-family: 'Mali', cursive;
+  }
+
+
+}
