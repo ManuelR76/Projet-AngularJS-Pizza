@@ -26,17 +26,17 @@ app.filter('unique', function() {
     return output;
   };
 });
-
+// controleur
 app.controller('storeController', ['$scope', '$http', function($scope, $http){
   // import des données venant du Json
   $http.get('./assets/js/productsData.json').then(function(data) {
     $scope.products = data.data;
   });
   // variables pour les produits dans le panier et le total
-  $scope.cart = [];
-  $scope.total = 0;
-  $scope.totalCount = 0;
-  $scope.categoryFiltered = '';
+  $scope.cart = [];// tableau de produits dans le panier
+  $scope.total = 0;// total pour le nombre de produit sélectionné
+  $scope.totalCount = 0;// total de tous les produits
+  $scope.categoryFiltered = '';// filtre les catégories à afficher ('' => représente toutes les catégories)
   // fonction de mise à jour du panier
   $scope.categoryFilter = function (categorySelected) {
     $scope.categoryFiltered = categorySelected;// met à jour la variable de filtre des catégories
@@ -45,8 +45,10 @@ app.controller('storeController', ['$scope', '$http', function($scope, $http){
   $scope.update = function () {
     // Boucle mettant à jour le total d'articles dans le panier
     $scope.totalCount = 0;
+    $scope.total = 0;// met le total à 0
     angular.forEach($scope.cart, function (value, key) {
       $scope.totalCount += Number($scope.cart[key].count);
+      $scope.total += Number($scope.cart[key].count)*Number($scope.cart[key].price);
     });
   }
   $scope.update();
@@ -70,7 +72,6 @@ app.controller('storeController', ['$scope', '$http', function($scope, $http){
       }
     }
     $scope.update();// met à jour le total global
-    $scope.total += parseFloat(product.price);// Met à jour la variable total du produit
   };
   // Retire une quantité d'un produit----------------------------------------------
   $scope.removeItemCart = function(product){
@@ -89,7 +90,6 @@ app.controller('storeController', ['$scope', '$http', function($scope, $http){
     var index = $scope.cart.indexOf(product);// recherche l'index du produit dans le tableau du panier
     $scope.cart.splice(index, 1);// retire le produit du tableau du panier par rapport à l'index
     product.count = 0;// met le nombre de produit à 0
-    $scope.total = 0;// met le tootal à 0
     $scope.update();// met à jour le total global
   }
 }]);

@@ -6,23 +6,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
   <title>Pizza Mia - Accueil</title>
   <!-- Shortcut Icon -->
-  <!-- <link href="bootstrap.css" rel="stylesheet" />
-  <link href="bootstrap-theme.css" rel="stylesheet" /> -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous" />
   <link href="https://fonts.googleapis.com/css?family=Lato:400,300,600,800,900" rel="stylesheet" type="text/css" />
   <link href="https://fonts.googleapis.com/css?family=Mali" rel="stylesheet">
-  <!--Import materialize.css-->
-
   <!-- Import personnal stylesheet -->
   <link type="text/css" rel="stylesheet" href="./assets/css/style.css" />
 </head>
 <body>
-  <!-- bandeau enseigne -->
-  <!-- panier -->
-
-  <!-- end of panier -->
-  <!-- Victoria's part --><!-- bandeau enseigne -->
+  <!-- Victoria's part -->
   <header>
     <div class="adressbar">
       <marquee>MIA PIZZA &nbsp; &nbsp; &nbsp; Adresse: 19 RUE D'INGOUVILLE, &nbsp; &nbsp; 76600 LE HAVRE  &nbsp;  &nbsp;   &nbsp;Téléphone: 0235 21 51 31 &nbsp; &nbsp; Horaire: Ouvert du lundi au samedi de 9h à 14h30 et de 17H30 à 22h </marquee>
@@ -39,7 +31,7 @@
             <a class="nav-link" href="#">Accueil<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown active">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            <a class="nav-link dropdown-toggle" href="#products" id="navbardrop" data-toggle="dropdown">
               Nos produits
             </a>
             <div class="dropdown-menu">
@@ -49,17 +41,16 @@
             </div>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Idées recettes</a>
+            <a class="nav-link" href="#ideas">Idées recettes</a>
           </li>
           <li class="nav-item active">
-            <a class="nav-link" href="#">Contact</a>
+            <a class="nav-link" href="#footer">Contact</a>
           </li>
           <a id="linkfacebook" class="nav-link icon" href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-square fa-2x icon1"></i></a>
           <a id="linkLinkedin" class="nav-link icon" href="https://www.linkedin.com" target="_blank"><i class="fab fa-linkedin fa-2x icon2"></i></a>
         </ul>
       </div>
     </nav>
-
   </header>
   <section class="main-image">
     <div class="row">
@@ -67,13 +58,7 @@
         <div class="introduction">
           <div class="slogan">
             <h1>Mia Pizza vous accueille<br />au sein de son enseigne</h1>
-          </div>
-        </div>
-      </div>
-      <div class="col">
-        <div class="introduction">
-          <div class="table">
-            <h2>Retrouvez chez nous les<br />meilleurs pizzas, sandwichs<br />et salades d'origines italiennes<br />au meilleur prix.</h2>
+            <button type="button" href="#offers">Voir nos offres</button>
           </div>
         </div>
       </div>
@@ -82,213 +67,220 @@
 </section>
 <!-- End Victoria's part -->
 <!-- Card's part offres-->
-<div class="container-fluid">
-  <div ng-controller="storeController">
-    <h1>Nos offres</h1>
-    <!-- CATEGORIES -->
-    <div class="row justify-content-md-center">
-      <div class="btn-group" role="group" aria-label="catégories" id="categoryDisplay">
-        <div ng-repeat="product in products | unique : 'category'">
-          <button type="button" class="btn btn-primary" ng-click="categoryFilter(product.category)">{{product.category}}</button>
-        </div>
-        <button type="button" class="btn btn-primary" ng-click="categoryFilter('')">Tout</button>
-      </div>
-    </div>
-    <!-- OFFRES -->
-    <div class="row">
-      <div class="col-md-4" id="productsDisplay" ng-repeat="product in products | filter: categoryFiltered">
-        <div class="card text-center">
-          <div class="card-header">
-            <p class="card-title"><strong>{{product.name}}</strong></p>
+<section>
+  <div class="container-fluid">
+    <div ng-controller="storeController">
+      <h3 id="offers"><strong>Nos offres</strong></h3>
+      <!-- CATEGORIES -->
+      <div class="row justify-content-md-center" id="categoryRow">
+        <div class="btn-toolbar" aria-label="catégories" id="categoryGroup">
+          <div ng-repeat="product in products | unique : 'category'">
+            <button type="button" class="btn btn-warning" ng-click="categoryFilter(product.category)" id="categoryItem">{{product.category}}</button>
           </div>
-          <div class="card-body">
-            <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
-            <p class="card-text">{{product.description}}</p>
-            <p><strong>{{product.price | currency:"€"}}</strong></p>
-          </div>
-          <div class="card-footer">
-            <input class="btn btn-success" type="button" ng-click="addItemToCart(product)" value="Commander" />
-          </div>
+          <button type="button" class="btn btn-warning" ng-click="categoryFilter('')" id="categoryAll">Tout</button>
         </div>
       </div>
-    </div>
-    <!-- The Modal -->
-    <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title" id="cartContent">Votre commande</h1>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">×</span>
-            </button>
+      <!-- OFFRES -->
+      <div class="row">
+        <div class="col-md-3" id="productsDisplay" ng-repeat="product in products | filter: categoryFiltered">
+          <div class="card text-center">
+            <div class="card-header">
+              <h5 class="card-title"><strong>{{product.name}}</strong></h3>
+            </div>
+            <div class="card-body">
+              <img class="card-img-top" src="{{product.image}}" alt="Card image cap">
+              <p class="card-text">{{product.description}}</p>
+              <p id="priceDisplay"><strong>{{product.price | currency:"€"}}</strong></p>
+            </div>
+            <div class="card-footer">
+              <input class="btn btn-warning" type="button" ng-click="addItemToCart(product)" value="Commander" />
+            </div>
           </div>
-          <!-- MODAL BODY -->
-          <div class="modal-body">
-            <main class="page">
-              <section class="shopping-cart dark">
-                <div class="container">
-                  <div class="content">
-                    <div class="row">
-                      <div class="col-md-12 col-lg-8 scrollYClass">
-                        <div class="items">
-                          <h3 ng-hide="cart.length !== 0">Votre panier est vide.</h3>
-                          <ul class="list-group">
-                            <li class="list-group-item" ng-repeat="c in cart">
-                              <p class="d-flex justify-content-between">{{c.name}}
-                                <span>
-                                  <i class="fas fa-minus-circle minusItem" ng-click="removeItemCart(c)"></i>
-                                  <span id="priceByItem"> {{c.count}} </span>
-                                  <i class="fas fa-plus-circle plusItem" ng-click="addItemToCart(c)"></i>
-                                </span>
-                                {{c.price*c.count | currency:"€"}}
-                                <button class="tooltip-test float-right" id="deleteProduct" title="Supprimer" ng-click="deleteProductInCart(c)">X</button></p>
-                              </li>
-                            </ul>
+        </div>
+      </div>
+      <!-- The Modal -->
+      <div class="modal fade" id="cart" tabindex="-1" role="dialog" aria-labelledby="cartLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title" id="cartContent">Votre commande</h1>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">×</span>
+              </button>
+            </div>
+            <!-- MODAL BODY -->
+            <div class="modal-body">
+              <main class="page">
+                <section class="shopping-cart dark">
+                  <div class="container">
+                    <div class="content">
+                      <div class="row">
+                        <div class="col-md-12 col-lg-8">
+                          <div class="items">
+                            <h3 ng-hide="cart.length !== 0">Votre panier est vide.</h3>
+                            <ul class="list-group">
+                              <li class="list-group-item" ng-repeat="c in cart">
+                                <p class="d-flex justify-content-between">ref. {{c.id}} - {{c.name}}
+                                  <span>
+                                    <i class="fas fa-minus-circle minusItem" ng-click="removeItemCart(c)"></i>
+                                    <span id="priceByItem"> {{c.count}} </span>
+                                    <i class="fas fa-plus-circle plusItem" ng-click="addItemToCart(c)"></i>
+                                  </span>
+                                  {{c.price*c.count | currency:"€"}}
+                                  <button class="tooltip-test float-right" id="deleteProduct" title="Supprimer" ng-click="deleteProductInCart(c)">X</button></p>
+                                </li>
+                              </ul>
+                            </div>
                           </div>
-                        </div>
-                        <div class="col-md-12 col-lg-4">
-                          <div class="summary">
-                            <h3>Résumé</h3>
-                            <div class="summary-item"><span class="text">Total : {{total | currency:"€"}}</span></div>
-                            <div class="shipping">Pas de frais de port.</div>
+                          <div class="col-md-12 col-lg-4">
+                            <div class="summary">
+                              <h3>Résumé</h3>
+                              <div class="summary-item"><span class="text">Total : {{total | currency:"€"}}</span></div>
+                              <div class="shipping">Pas de frais de port.</div>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
-                </section>
-              </main>
-            </div>
-            <!-- !MODAL BODY -->
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
-              <button type="button" class="btn btn-primary">Valider</button>
+                  </section>
+                </main>
+              </div>
+              <!-- !MODAL BODY -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                <button type="button" class="btn btn-success">Valider</button>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </body>
-    <!-- PANIER -->
-    <div class="container-fluid countDisplay">
-      <div class="row">
-        <a class="nav-link" id="cartButton" data-toggle="modal" data-target="#cart"><span class="circle" >{{totalCount}}</span><i class="fas fa-shopping-cart"></i></a>
+      </body>
+      <!-- PANIER -->
+      <div class="container-fluid countDisplay">
+        <div class="row">
+          <a class="nav-link" id="cartButton" data-toggle="modal" data-target="#cart"><span class="circle" >{{totalCount}}</span><i class="fas fa-shopping-cart"></i></a>
+        </div>
       </div>
     </div>
-    <!-- Card's part -->
-    <section class= "container-fluid recepees">
-      <div class="row">
-        <div class="col-lg-12">
-          <div class="recepees-title">
-            <div class="title">
-              <h3><strong>Idees recettes du jour</strong></h3>
+  </div>
+    </section>
+    <!--********************************************************************* Card's part ***************************************************************************-->
+    <section class="recipees">
+      <div class="container-fluid text-center velo">
+
+        <div class="row">
+          <div class="col-lg-12 col-sm-6">
+            <div class="recepees-title">
+              <div class="title">
+                <h3><strong>Idees recettes du jour</strong></h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="cards">
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/images/pizzaraclette.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"><strong>La pizza du jour</strong></h5>
-                <p class="card-text">La pizza aux ingrédients d'automne ravira les papillotes de toute la famille</p>
-                <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Consulter la recette</button>
-              </div>
-              <!-- Modal 1-->
-              <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <ul>
-                        <li>Pate</li>
-                        <li>Champignons</li>
-                        <li>Chataignes</li>
-                        <li>Poivrons Jaunes</li>
-                        <li>Tomates</li>
-                        <li>Pignons</li>
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <div class="cards">
+          <div class="row">
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/pizzaraclette.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>La pizza du jour</strong></h4>
+                  <p class="card-text">La pizza aux ingrédients d'automne ravira les papillotes de toute la famille</p>
+                  <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal">Consulter la recette</button>
+                </div>
+                <!-- Modal 1-->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>Pate</li>
+                          <li>Champignons</li>
+                          <li>Chataignes</li>
+                          <li>Poivrons Jaunes</li>
+                          <li>Tomates</li>
+                          <li>Pignons</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/images/cocktail.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"><strong>Le cocktail du jour</strong></h5>
-                <p class="card-text">L'incontournable cocktail italien revient pour accompagner vos repas</p>
-                <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal2">Consulter la recette</button>
-              </div> -->
-              <!-- Modal 2-->
-              <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <ul>
-                        <li>Pate</li>
-                        <li>Champignons</li>
-                        <li>Chataignes</li>
-                        <li>Poivrons Jaunes</li>
-                        <li>Tomotes</li>
-                        <li>Pignons</li>
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/cocktail.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><strong>Le cocktail du jour</strong></h5>
+                  <p class="card-text">L'incontournable cocktail italien revient pour accompagner vos repas</p>
+                  <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal2">Consulter la recette</button>
+                </div>
+                <!-- Modal 2-->
+                <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h4 class="modal-title" id="exampleModalLabel">Pizza automnale</h4>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>Pate</li>
+                          <li>Champignons</li>
+                          <li>Chataignes</li>
+                          <li>Poivrons Jaunes</li>
+                          <li>Tomotes</li>
+                          <li>Pignons</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="card" style="width: 18rem;">
-              <img class="card-img-top" src="assets/images/tiramisu.jpg" alt="Card image cap">
-              <div class="card-body">
-                <h5 class="card-title"><strong>Le Dessert du jour</strong></h5>
-                <p class="card-text">Le tiramisu revisité et allégé pour l'occasion pour ne plus avoir de regrets inutiles</p>
-                <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal3">Consulter la recette</button>
-              </div> -->
-              <!-- Modal 3-->
-              <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
-                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                      </button>
-                    </div>
-                    <div class="modal-body">
-                      <ul>
-                        <li>Pate</li>
-                        <li>Champignons</li>
-                        <li>Chataignes</li>
-                        <li>Poivrons Jaunes</li>
-                        <li>Tomotes</li>
-                        <li>Pignons</li>
-                      </ul>
-                    </div>
-                    <div class="modal-footer">
-                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <div class="col">
+              <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/tiramisu.jpg" alt="Card image cap">
+                <div class="card-body">
+                  <h4 class="card-title"><strong>Le Dessert du jour</strong></h4>
+                  <p class="card-text">Le tiramisu revisité et allégé pour l'occasion pour ne plus avoir de regrets inutiles</p>
+                  <button type="button" class="btn" data-toggle="modal" data-target="#exampleModal3">Consulter la recette</button>
+                </div>
+                <!-- Modal 3-->
+                <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Pizza automnale</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                        </button>
+                      </div>
+                      <div class="modal-body">
+                        <ul>
+                          <li>Pate</li>
+                          <li>Champignons</li>
+                          <li>Chataignes</li>
+                          <li>Poivrons Jaunes</li>
+                          <li>Tomotes</li>
+                          <li>Pignons</li>
+                        </ul>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -298,6 +290,7 @@
         </div>
       </div>
     </section>
+    <!--*************************************************************************************** footer part's **************************************************************************-->
     <!-- footer part's -->
     <footer id="footer">
       <div class="container-fluid">
@@ -336,7 +329,6 @@
               </fieldset> <!-- le "ng-click" du boutton au dessus permet de lancer la fonction "clickedButton()" (si c'est une fonction qu'on veut lancer, ne pas oublier les parenthèes à la fin pour bien indiquer que s'en est une)-->
             </form>
           </div>
-
           <div class="col text-center">
             <h4 class="ft-text-title">NOTRE RESTAURANT</h4>
             <img id="imgmap" src = assets/images/imgmap.png />
@@ -362,40 +354,23 @@
           </div>
         </div>
       </footer>
-      <div class="container-fluid footerbottom">
-        <div class=" row pull-right">
-          <nav class="navbar">
-            <nav class="nav navbar-nav pull-xs-left">
-              <img id="logofooter" src="assets/images/logo.png" />
-              <a class="nav-item nav-link" href="#"></a>
-              <a class="nav-item nav-link" href="#"></a>
-              <a class="nav-item nav-link" href="#"></a>
-            </nav>
-          </nav>
-        </div>
-        <div id="socialfooter">
-          <a href="#"><i class="fab fa-facebook-square fa-2x logosocial"></i></a>
-          <a href="#"><i class="fab fa-twitter fa-2x logosocial"></i></a>
-          <a href="#"><i class="fab fa-linkedin fa-2x logosocial"></i></a><br>
-          <p class="h6">
-            Powered by Mia-Pizza-76.com
-            <a href="" target="_blank"></a>
-          </p>
-        </div>
+      <div id="socialfooter">
+        <a href="#"><i class="fab fa-facebook-square fa-2x logosocial"></i></a>
+        <a href="#"><i class="fab fa-twitter fa-2x logosocial"></i></a>
+        <a href="#"><i class="fab fa-linkedin fa-2x logosocial"></i></a><br>
+        <p class="h6">
+          Powered by Mia-Pizza-76.com
+          <a href="" target="_blank"></a>
+        </p>
       </div>
-      <!-- End of footer's part -->
+    </div>
+    <!-- End of footer's part -->
 
-      <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
-      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular-cookies.js"></script>
-      <!-- <script src="jquery-3.3.1.min.js"></script>
-      <script src="popper.min.js"></script>
-      <script src="angular.min.js"></script>
-      <script src="angular-cookies.min.js"></script>
-      <link href="bootstrap.min.js"> -->
-      <script src="assets/js/script.js"></script>
-    </body>
-    </html>
+    <!-- jQuery first, then Materialize.js, SweetAlert.js and Perso-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.5/angular.min.js"></script>
+    <script src="assets/js/script.js"></script>
+  </body>
+  </html>

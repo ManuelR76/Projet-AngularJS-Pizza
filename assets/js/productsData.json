@@ -35,7 +35,7 @@
     "id":5,
     "name":"Mia Pizza",
     "price":10.60,
-    "image":"./assets/images/pizzamia.jpeg",
+    "image":"./assets/images/pizza-mia.jpg",
     "category":"Pizza",
     "description":"lardons, mozzarella, oignons, champignons, chorizo, chèvre, oeuf"
   },
@@ -51,7 +51,7 @@
     "id":7,
     "name":"Américain",
     "price":5.50,
-    "image":"./assets/images/americain.jpeg",
+    "image":"./assets/images/americain.jpg",
     "category":"Sandwich",
     "description":"viande hachée, frite, sauce au choix"
   },
@@ -83,7 +83,7 @@
     "id":11,
     "name":"Salade fermière",
     "price":7.20,
-    "image":"./assets/images/salade-orientale-4536.jpg",
+    "image":"./assets/images/salade-orientale.jpg",
     "category":"Salade",
     "description":"mesclun, tomates, poulet, maïs + sauce salade"
   },
@@ -91,7 +91,7 @@
     "id":12,
     "name":"Salade chèvre chaud",
     "price":12.00,
-    "image":"./assets/images/i83262-crudites-chevre.jpg",
+    "image":"./assets/images/crudites-chevre.jpg",
     "category":"Salade",
     "description":"mesclun, tomates, chèvre chaud, lardons, croûtons de pain + sauce salade"
   },
@@ -99,7 +99,7 @@
     "id":13,
     "name":"Salade avocat crevette",
     "price":13.20,
-    "image":"./assets/images/i136728-salade-avocats-crevettes-et-tomates.jpeg",
+    "image":"./assets/images/salade-avocats-crevettes-et-tomates.jpeg",
     "category":"Salade",
     "description":"mesclun, tomates, avocat, crevettes, citron + sauce salade"
   },
@@ -107,7 +107,7 @@
     "id":14,
     "name":"Salade du Chef",
     "price":9.00,
-    "image":"./assets/images/193932_640x428.jpg",
+    "image":"./assets/images/salade-du-chef.jpg",
     "category":"Salade",
     "description":"mesclun, tomates, poulet, maïs, oeuf, olives + sauce teriyaki"
   },
@@ -115,7 +115,7 @@
     "id":15,
     "name":"Tacos viande hachée",
     "price":9.00,
-    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "image":"./assets/images/tacos.png",
     "category":"Tacos",
     "description":"viande hachée, frites à l'intérieur, sauce fromagère"
   },
@@ -123,7 +123,7 @@
     "id":16,
     "name":"Tacos merguez",
     "price":7.00,
-    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "image":"./assets/images/tacos.png",
     "category":"Tacos",
     "description":"merguez, frites à l'intérieur, sauce fromagère"
   },
@@ -131,7 +131,7 @@
     "id":17,
     "name":"Tacos poulet",
     "price":7.00,
-    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "image":"./assets/images/tacos.png",
     "category":"Tacos",
     "description":"poulet, frites à l'intérieur, sauce fromagère "
   },
@@ -139,7 +139,7 @@
     "id":18,
     "name":"Tacos cordon bleu",
     "price":7.00,
-    "image":"./assets/images/Image4_tacos_de_grenoble.png",
+    "image":"./assets/images/tacos.png",
     "category":"Tacos",
     "description":"poulet, frites à l'intérieur, sauce fromagère "
   },
@@ -147,7 +147,7 @@
     "id":19,
     "name":"Coca-Cola 33cl",
     "price":2.00,
-    "image":"./assets/images/images.jpeg",
+    "image":"./assets/images/coca-33cl.jpg",
     "category":"Boisson",
     "description":"canette de 33cl "
   },
@@ -155,7 +155,7 @@
     "id":20,
     "name":"Fanta 33cl",
     "price":2.00,
-    "image":"./assets/images/24-canettes-de-fanta-orange-33-cl.jpg",
+    "image":"./assets/images/fanta-orange-33-cl.jpg",
     "category":"Boisson",
     "description":"cannette de 33 cl"
   },
@@ -163,7 +163,7 @@
     "id":21,
     "name":"Oasis 33cl",
     "price":2.00,
-    "image":"./assets/images/700902.jpg",
+    "image":"./assets/images/oasis-33cl.jpg",
     "category":"Boisson",
     "description":"cannette de 33 cl"
   },
@@ -171,7 +171,7 @@
     "id":22,
     "name":"Perrier 33cl",
     "price":2.00,
-    "image":"./assets/images/16919.jpg",
+    "image":"./assets/images/perrier-33cl.jpg",
     "category":"Boisson",
     "description":"eau gazeuse de 33 cl"
   }
