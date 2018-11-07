@@ -1,9 +1,118 @@
+body {
+  margin: 0;
+}
 
 /* Victoria's part navbar */
 
-/* carousel */
+marquee {
+  font-size: 0.8rem;
+  color: white;
+  background: black;
+  z-index: 2;
+  height: auto;
+  position: fixed;
+}
+
+.navbar {
+ background: linear-gradient( #a3211f, #BD0202);
+ position: fixed;
+ z-index: 1;
+ height: auto;
+ left: 0;
+ top: 0;
+ width: 100%;
+ /* transition top 0.3s; */
+ /* opacity: 1; */
+}
+
+.navbar.navbar-expand-lg.navbar-dark.backnav {
+  margin-top: 17px;
+  border-bottom: 2px solid black;
+  box-shadow: 4px 4px 10px black;
+}
+
+.navbar-brand #logo {
+  height: 60px;
+  width: 60px;
+  border-radius: 10px;
+  margin: 0 140px 0 40px;
+  box-shadow: 3px 3px 3px black;
+}
+
+a.nav-link {
+  text-shadow: 1px 1px 1px black;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  font-weight: 900;
+}
+
+a.nav-link:hover {
+  border-bottom: 3px solid green;
+  font-size: 1rem;
+}
+
+a.nav-link.icon {
+  border-bottom: none;
+  text-shadow: 1px 1px 1px black;
+}
+
+.navbar li {
+  margin: auto 30px;
+}
+
+.navbar .icon1 {
+  margin-left: 220px;
+}
+
+.dropdown-menu.show {
+  background: linear-gradient( #a3211f, #BD0202);
+}
+
+.dropdown-item {
+  color: #fff;
+}
+
+/* .show {
+  opacity:0;
+} */
+/*
 
 
+/* Victoria main-page */
+
+.main-image {
+  margin-top: 0px;
+  background: url('../images/menu.jpg') top;
+  max-width: 100%;
+  display: flex;
+  height: 100vh;
+  background-repeat: no-repeat;
+  position: relative;
+  z-index: 0;
+  padding-bottom: 100px;
+  border-bottom: 4px solid #FF8D12;
+  background-size: cover;
+}
+
+.main-image .slogan h1 {
+  font-size: 2.4em;
+  color: #c7cfdb;
+  margin-top: 370px;
+  margin-left: 160px;
+  text-shadow: 3px 3px 3px black;
+}
+
+.main-image .table {
+  margin-top: 370px;
+  margin-left: 0px;
+}
+
+.main-image .table h2 {
+  margin-left: 100px;
+  font-size: 2em;
+  color: #cca043;
+  font-family: 'Mali', cursive;
+}
 /* End Victoria's part */
 
 /* Jeffren's part  */
@@ -21,7 +130,7 @@
   cursor:pointer;
 }
 #categoryDisplay{
-  
+
 }
 #priceByItem{
   color : blue;
@@ -72,14 +181,112 @@
   border-radius:3rem;
   z-index: 2;
 }
-@media (min-width: 768px) {
-
-}
 /* End Jeffen's part */
 
 /* Manuel's part  */
+.recepees {
+	max-width: auto;
+	display: flex;
+	height: auto;
+	background: url('../images/rome.jpg');
+	background-repeat: no-repeat;
+	position: relative;
+	z-index: 0;
+  padding-top: 60px;
+	padding-bottom: 100px;
+	background-size: cover;
+  margin-top: 0px;
+  border-bottom: 4px solid #FF8D12;
+}
 
+.center-block {
 
+}
+
+.cards {
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+}
+
+.card h3 {
+	margin-top: 0px;
+	color: #fff;
+	text-shadow: 2px 2px 2px black;
+}
+
+h3 strong {
+  font-size: 0.8em;
+  font-family: 'Mali', cursive;
+  text-shadow: 2px 2px 2px black;
+  color: #fff;
+	background:  linear-gradient( #a3211f, #BD0202);
+	padding: 10px 15px;
+	box-shadow: 3px 3px 3px black;
+	border-radius: 5px;
+  margin-bottom: 100px;
+}
+
+.card h4 {
+	color: black;
+}
+
+.card h4#exampleModalLabel{
+	color: #fff;
+}
+
+ button.close {
+	 color: #fff;
+ }
+
+.card {
+  margin-bottom: 10px;
+  border: 1px solid black;
+	box-shadow: 3px 3px 3px black;
+}
+
+.card-img-top{
+	height: 210px;
+	border-bottom: 1px solid black;
+}
+
+.card p{
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.btn {
+	color: #fff;
+	background: linear-gradient( #a3211f, #BD0202);
+	box-shadow: 3px 3px 3px black;
+}
+
+.btn:hover {
+	color: #fff;
+	background: orangered;
+}
+
+.modal-body ul li {
+	list-style: none;
+}
+
+.modal-header {
+	background: linear-gradient( #a3211f, #BD0202);
+	border: 1px solid black;
+}
+
+.modal-footer {
+	background: linear-gradient( #a3211f, #BD0202);
+	border: 2px solid black;
+}
+
+.modal-title {
+  color: #fff;
+}
+
+button.close {
+  color: #fff;
+
+}
 /* End Manuel's part  */
 
 /* Yas footer's part  */
