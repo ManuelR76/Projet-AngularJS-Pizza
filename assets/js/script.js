@@ -39,7 +39,7 @@ app.controller('storeController', ['$scope', '$http', function($scope, $http){
   $scope.categoryFiltered = '';
   // fonction de mise à jour du panier
   $scope.categoryFilter = function (categorySelected) {
-    $scope.categoryFiltered = categorySelected;
+    $scope.categoryFiltered = categorySelected;// met à jour la variable de filtre des catégories
   }
   // fonction de mise à jour du panier
   $scope.update = function () {
@@ -58,39 +58,38 @@ app.controller('storeController', ['$scope', '$http', function($scope, $http){
       $scope.cart.push(product);// ajoute le produit à la liste du panier
     } else {
       var repeat = false; // variable vérifiant la cohérence entre le panier et la liste des produits par l'id
-      for(var i = 0; i< $scope.cart.length; i++){
-        if($scope.cart[i].id === product.id){
-          repeat = true;
-          $scope.cart[i].count +=1;
+      for(var i = 0; i< $scope.cart.length; i++){// parcours la liste du panier pour voir combien il y à de produits en plusieurs exemplaires
+        if($scope.cart[i].id === product.id){// condition vérifiant s'il y à un doublon
+          repeat = true;// valide s'il y a un doublon
+          $scope.cart[i].count +=1;// ajoute +1 au produit qui à un doublon
         }
       }
-      if (!repeat) {
-        product.count = 1;
-        $scope.cart.push(product);
+      if (!repeat) {// s'il n'y a pas eu de doublon
+        product.count = 1;// met le nombre de produits à 1
+        $scope.cart.push(product);// renvoie le tout dans la liste du panier
       }
     }
-    $scope.update();
-    // Met à jour la variable total
-    $scope.total += parseFloat(product.price);
+    $scope.update();// met à jour le total global
+    $scope.total += parseFloat(product.price);// Met à jour la variable total du produit
   };
   // Retire une quantité d'un produit----------------------------------------------
   $scope.removeItemCart = function(product){
-    if(product.count > 1){
-      product.count -= 1;
-    }else if(product.count === 1){
-      var index = $scope.cart.indexOf(product);
-      $scope.cart.splice(index, 1);
-      product.count = 0;
+    if(product.count > 1){// s'il y a un produit en double ou plus
+      product.count -= 1;// enlève une quantité
+    }else if(product.count === 1){// s'il n'y en a qu'un
+      var index = $scope.cart.indexOf(product);// recherche l'index du produit dans le tableau du panier
+      $scope.cart.splice(index, 1);// retire le produit du tableau du panier par rapport à l'index
+      product.count = 0;// met le nombre de produit à 0
     }
-    $scope.total -= parseFloat(product.price);
-    $scope.update();
+    $scope.total -= parseFloat(product.price);// retire le montant du produit au total du produit
+    $scope.update();// met à jour le total global
   };
   // Suppression d'un produit------------------------------------------------------
   $scope.deleteProductInCart = function(product){
-    var index = $scope.cart.indexOf(product);
-    $scope.cart.splice(index, 1);
-    product.count = 0;
-    $scope.total = 0;
-    $scope.update();
+    var index = $scope.cart.indexOf(product);// recherche l'index du produit dans le tableau du panier
+    $scope.cart.splice(index, 1);// retire le produit du tableau du panier par rapport à l'index
+    product.count = 0;// met le nombre de produit à 0
+    $scope.total = 0;// met le tootal à 0
+    $scope.update();// met à jour le total global
   }
 }]);

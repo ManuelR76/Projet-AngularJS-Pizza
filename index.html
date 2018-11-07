@@ -49,11 +49,11 @@
       <h1>Nos offres</h1>
       <!-- CATEGORIES -->
       <div class="row justify-content-md-center">
-        <div class="d-flex text-center" id="productsDisplay">
+        <div class="btn-group" role="group" aria-label="catégories" id="categoryDisplay">
           <div ng-repeat="product in products | unique : 'category'">
-            <button ng-click="categoryFilter(product.category)">{{product.category}}</button>
+            <button type="button" class="btn btn-primary" ng-click="categoryFilter(product.category)">{{product.category}}</button>
           </div>
-            <button ng-click="categoryFilter('')">Tout</button>
+            <button type="button" class="btn btn-primary" ng-click="categoryFilter('')">Tout</button>
         </div>
       </div>
       <!-- OFFRES -->

@@ -20,6 +20,9 @@
 .plusItem:hover{
   cursor:pointer;
 }
+#categoryDisplay{
+  
+}
 #priceByItem{
   color : blue;
 }
